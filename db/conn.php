@@ -3,10 +3,12 @@
     $db = "localhost";
     $userName = "root";
     $pass = "";
-    $dbName = "quiz_login";
+    $dbName = "quiz_app";
 
-    $sql = "CREATE TABLE IF NOT EXISTS login(
-        username VARCHAR(50),
+    $sql = "CREATE TABLE IF NOT EXISTS student_info(
+        std_id VARCHAR(50),
+        std_name VARCHAR(50),
+        std_email VARCHAR(50),
         pass VARCHAR(50)
     )";
 
@@ -17,7 +19,7 @@
     }
 
     if($conn->query($sql) === true){
-        echo "Database created or exists";
+        // echo "Database created or exists";
     }else{
         die("Something wents wrong ". $conn->error);
     }
