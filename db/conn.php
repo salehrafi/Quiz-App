@@ -5,11 +5,12 @@
     $pass = "";
     $dbName = "quiz_app";
 
-    $sql = "CREATE TABLE IF NOT EXISTS student_info(
-        std_id VARCHAR(50),
-        std_name VARCHAR(50),
-        std_email VARCHAR(50),
-        pass VARCHAR(50)
+    $sql = "CREATE TABLE IF NOT EXISTS reg_info(
+        id VARCHAR(50) UNIQUE,
+        name VARCHAR(50),
+        email VARCHAR(100) UNIQUE,
+        pass VARCHAR(255),
+        role VARCHAR(20)
     )";
 
     $conn = new mysqli($db, $userName, $pass, $dbName);

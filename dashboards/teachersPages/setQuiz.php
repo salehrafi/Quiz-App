@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged_in'])) {
-    header("Location: ../auth/login.php");
-    exit();
-}
-
-// echo "this is terachers dashboard";
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +9,16 @@ if (!isset($_SESSION['logged_in'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="navStyle.css">
-    <title>Teachers Dashboard</title>
+    <title>Set Quiz</title>
+    <link rel="stylesheet" href="../navStyle.css">
 </head>
 
 <body>
     <nav>
         <div class="left-nav">
             <ul class="navBar">
-                <li><a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="active">Home</a></li>
-                <li><a href="teachersPages/setQuiz.php">Set Quiz</a></li>
+                <li><a href="../teacherDashboard.php" >Home</a></li>
+                <li><a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="active">Set Quiz</a></li>
                 <li><a href="teachersPages/results.php">Results</a></li>
                 <li><a href="teachersPages/student_profile.php">Students Profile</a></li>
                 <li><a href="teachersPages/questions.php">Questions</a></li>
@@ -33,11 +27,9 @@ if (!isset($_SESSION['logged_in'])) {
         </div>
 
         <div class="right-nav">
-            <a href="../auth/logout.php" class="logout-btn">Log Out, <?php echo $_SESSION['name'] ?></a>
+            <a href="../../auth/logout.php" class="logout-btn">Log Out, <?php echo $_SESSION['name'] ?></a>
         </div>
     </nav>
-
-
 </body>
 
 </html>
