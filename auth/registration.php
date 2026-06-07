@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $role = trim($_POST['user_type']);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO reg_info (id, name, email, pass, role) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO reg_info (id, full_name, email, pass, role) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
